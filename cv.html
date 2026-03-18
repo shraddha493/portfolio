@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Shraddha Kadam · Prompt Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf5ef;--bg2:#f0dec8;--bg3:#e8d4b8;--tan:#c8b7a7;--dark:#2d1f14;--mid:#5a3e2b;--accent:#8d6a4f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(250,245,239,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg3)}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--dark);text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);text-decoration:none}
+.back:hover{color:var(--dark)}
+.cv-wrap{max-width:960px;margin:0 auto;padding:6rem 2.5rem 5rem}
+ 
+/* HEADER */
+.cv-header{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;padding-bottom:2rem;border-bottom:2px solid var(--dark);margin-bottom:2.5rem}
+.for-role{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.75rem}
+.for-role::before{content:'';width:2rem;height:1px;background:var(--accent)}
+.cv-name{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;letter-spacing:-0.03em;line-height:0.95;color:var(--dark);margin-bottom:0.8rem}
+.cv-name em{font-style:italic;font-weight:400;color:var(--accent)}
+.cv-summary{font-size:0.88rem;color:var(--mid);line-height:1.7;max-width:460px}
+.cv-contact{text-align:right}
+.ci{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--mid);margin-bottom:0.4rem;letter-spacing:0.02em}
+.ci a{color:var(--accent);text-decoration:none}
+ 
+/* BODY */
+.cv-body{display:grid;grid-template-columns:1fr 230px;gap:3rem}
+ 
+/* SECTION */
+.cv-sec{margin-bottom:2.5rem}
+.cv-sec-title{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;font-weight:500;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);padding-bottom:0.5rem;border-bottom:1px solid var(--dark);margin-bottom:1.5rem}
+ 
+/* HIGHLIGHT BOX */
+.highlight-box{background:var(--dark);padding:1rem 1.2rem;margin-bottom:1.5rem;border-left:3px solid var(--accent)}
+.hl-label{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--bg3);margin-bottom:0.3rem}
+.hl-text{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:rgba(250,245,239,0.75)}
+ 
+/* ENTRY */
+.cv-entry{margin-bottom:2rem}
+.cv-entry:last-child{margin-bottom:0}
+.cv-entry-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.15rem}
+.cv-role{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark);line-height:1.2}
+.cv-date{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--accent);white-space:nowrap;flex-shrink:0;padding-top:0.1em}
+.cv-org{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--accent);margin-bottom:0.6rem;letter-spacing:0.03em}
+.cv-bullets{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.cv-bullets li{font-size:0.85rem;color:var(--mid);padding-left:1rem;position:relative;line-height:1.6}
+.cv-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;top:0.2em}
+.cv-bullets li strong{color:var(--dark);font-weight:600}
+ 
+/* ASIDE */
+.aside-block{margin-bottom:2rem}
+.aside-title{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:0.8rem;padding-bottom:0.4rem;border-bottom:1px solid var(--bg3)}
+.skill-cat{margin-bottom:1rem}
+.skill-cat-name{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--mid);margin-bottom:0.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:0.3rem}
+.ch{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:1px;letter-spacing:0.03em}
+.ch.p{background:var(--dark);color:#faf5ef}
+.ch.s{background:var(--bg2);color:var(--dark)}
+.cert-item{padding:0.8rem 0;border-bottom:1px solid var(--bg3)}
+.cert-item:last-child{border-bottom:none}
+.cert-name{font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:var(--dark);margin-bottom:0.15rem}
+.cert-org{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--tan)}
+.proj-mini{padding:0.75rem 0;border-bottom:1px solid var(--bg3)}
+.proj-mini:last-child{border-bottom:none}
+.proj-mini-name{font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:var(--dark);margin-bottom:0.15rem}
+.proj-mini-desc{font-size:0.75rem;color:var(--mid);line-height:1.4}
+.proj-mini-tech{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--accent);margin-top:0.2rem}
+ 
+@media print{nav,body::before{display:none}body{background:#fff}.cv-wrap{padding:1rem}}
+@media(max-width:720px){nav{padding:1rem 1.5rem}.cv-wrap{padding:5rem 1.5rem}.cv-header{grid-template-columns:1fr}.cv-contact{text-align:left}.cv-body{grid-template-columns:1fr}.cv-name{font-size:2.2rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Shraddha<span style="color:var(--accent)">.</span></a>
+  <a href="index.html" class="back">← Portfolio</a>
+</nav>
+ 
+<div class="cv-wrap">
+  <header class="cv-header">
+    <div>
+      <p class="for-role">Applying for · Prompt Engineer · F5</p>
+      <h1 class="cv-name">Shraddha<br><em>Suresh Kadam</em></h1>
+      <p class="cv-summary">Computer Engineering graduate pursuing MSc HCI at UCD. Hands-on with LLM prompting strategies, RAG system design, failure mode analysis, and safety prompt engineering.</p>
+    </div>
+    <div class="cv-contact">
+      <p class="ci"><a href="/cdn-cgi/l/email-protection#2f5c475d4e4b4b474e5c441b161c6f48424e4643014c4042"><span class="__cf_email__" data-cfemail="ed9e859f8c8989858c9e86d9d4dead8a808c8481c38e8280">[email&#160;protected]</span></a></p>
+      <p class="ci">+353 870 390 932</p>
+      <p class="ci"><a href="https://www.linkedin.com/in/shraddha-kadam-849516233" target="_blank">linkedin.com/in/shraddha-kadam-849516233</a></p>
+      <p class="ci">Dublin, Ireland</p>
+      <p class="ci"><a href="index.html">Portfolio →</a></p>
+    </div>
+  </header>
+ 
+  <div class="cv-body">
+    <main>
+ 
+      <div class="cv-sec">
+        <p class="cv-sec-title">LLM & AI Projects</p>
+        <div class="highlight-box">
+          <p class="hl-label">Module</p>
+          <p class="hl-text">Language Methods & Models · MSc HCI · UCD · 2025</p>
+        </div>
+ 
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <p class="cv-role">Prompting Strategies for LLM Sentiment Analysis</p>
+            <span class="cv-date">2025</span>
+          </div>
+          <p class="cv-org">Individual Assignment · UCD</p>
+          <ul class="cv-bullets">
+            <li>Designed a <strong>6-experiment controlled study</strong> comparing Direct, Chain-of-Thought, Role-Based, and Combined prompting strategies across three document genres.</li>
+            <li>Controlled temperature (0.1–0.7), system role, and document type — isolating each variable's effect on sentiment output quality.</li>
+            <li><strong>Key finding:</strong> CoT + Role-Based strategies significantly outperform direct prompting for detecting sarcasm and implicit emotion.</li>
+            <li>Documented failure modes: high-temperature hallucination, over-confident labelling, strategy-content mismatch.</li>
+          </ul>
+        </div>
+ 
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <p class="cv-role">Recipe Assistant — RAG System (Lead: System Config & Evaluation)</p>
+            <span class="cv-date">2025</span>
+          </div>
+          <p class="cv-org">Group Project · UCD</p>
+          <ul class="cv-bullets">
+            <li><strong>Led full RAG system setup on Stack AI</strong> — Claude 4.5 Sonnet, semantic chunking, sliding window memory (size=10), citations enabled.</li>
+            <li>Engineered <strong>5-rule system prompt</strong> for safety: document-only grounding, anti-hallucination, out-of-scope refusal, no medical advice, citation enforcement.</li>
+            <li>Designed 24-test evaluation framework (Factual / Synthesis / Edge-Case, 1–5 rubric, multi-rater scoring) — <strong>4.3/5 factual, 3.9/5 synthesis & edge-case.</strong></li>
+            <li>Identified confident hallucination on edge-cases as primary failure; produced production improvement roadmap.</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <div class="cv-sec">
+        <p class="cv-sec-title">Experience</p>
+        <div class="cv-entry">
+          <div class="cv-entry-head"><p class="cv-role">AI Intern — NLP Chatbot Development</p><span class="cv-date">2024</span></div>
+          <p class="cv-org">TechSaksham · Microsoft & SAP / Edunet Foundation</p>
+          <ul class="cv-bullets"><li>Built NLP chatbot in Python — end-to-end from intent design to model integration.</li></ul>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-head"><p class="cv-role">Computer Dept. Intern</p><span class="cv-date">50 Days</span></div>
+          <p class="cv-org">Bhabha Atomic Research Centre (BARC)</p>
+          <ul class="cv-bullets"><li>SSL-VPN log analysis system in PHP — security-critical research environment.</li></ul>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-head"><p class="cv-role">Graphic Designer Intern</p><span class="cv-date">6 Months</span></div>
+          <p class="cv-org">TagSocial, Syneidisi Tech</p>
+          <ul class="cv-bullets"><li>Visual communication and brand design — translating complex ideas for diverse audiences.</li></ul>
+        </div>
+      </div>
+ 
+      <div class="cv-sec">
+        <p class="cv-sec-title">Education</p>
+        <div class="cv-entry">
+          <div class="cv-entry-head"><p class="cv-role">MSc Human-Computer Interaction</p><span class="cv-date">2025–26</span></div>
+          <p class="cv-org">University College Dublin</p>
+          <ul class="cv-bullets"><li>LLM prompting, RAG systems, NLP evaluation, HCI research, AI systems.</li></ul>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-head"><p class="cv-role">BE Computer Engineering · CGPA 8.22</p><span class="cv-date">2021–25</span></div>
+          <p class="cv-org">Terna Engineering College</p>
+          <ul class="cv-bullets"><li>Algorithms, ML fundamentals, software engineering · NSS Secretary, 100+ volunteers.</li></ul>
+        </div>
+      </div>
+ 
+    </main>
+ 
+    <aside>
+      <div class="aside-block">
+        <p class="aside-title">LLM & Prompting</p>
+        <div class="skill-cat">
+          <p class="skill-cat-name">Strategies</p>
+          <div class="chips"><span class="ch p">Chain-of-Thought</span><span class="ch p">Few-Shot</span><span class="ch p">Role-Based</span><span class="ch p">Combined</span><span class="ch s">Context Injection</span></div>
+        </div>
+        <div class="skill-cat">
+          <p class="skill-cat-name">Models</p>
+          <div class="chips"><span class="ch p">Claude (Anthropic)</span><span class="ch p">Hugging Face</span><span class="ch p">Stack AI</span><span class="ch s">GPT-family</span></div>
+        </div>
+        <div class="skill-cat">
+          <p class="skill-cat-name">Safety & Eval</p>
+          <div class="chips"><span class="ch p">Failure Mode Analysis</span><span class="ch p">Hallucination Detection</span><span class="ch p">Safety Guardrails</span><span class="ch s">RAG Grounding</span></div>
+        </div>
+      </div>
+ 
+      <div class="aside-block">
+        <p class="aside-title">Development</p>
+        <div class="chips"><span class="ch p">Python</span><span class="ch s">PHP</span><span class="ch s">JavaScript</span><span class="ch s">HTML/CSS</span><span class="ch s">Firebase</span><span class="ch s">Android Studio</span><span class="ch s">Figma</span></div>
+      </div>
+ 
+      <div class="aside-block">
+        <p class="aside-title">Certifications</p>
+        <div class="cert-item"><p class="cert-name">Cyber Security</p><p class="cert-org">ICT Academy · 2 months</p></div>
+        <div class="cert-item"><p class="cert-name">TechSaksham — AI</p><p class="cert-org">Microsoft & SAP / Edunet</p></div>
+        <div class="cert-item"><p class="cert-name">Web Dev Bootcamp</p><p class="cert-org">Full-Stack</p></div>
+      </div>
+ 
+      <div class="aside-block">
+        <p class="aside-title">Other Projects</p>
+        <div class="proj-mini"><p class="proj-mini-name">Expense Tracker App</p><p class="proj-mini-desc">Android app with expense categorisation</p><p class="proj-mini-tech">Android Studio</p></div>
+        <div class="proj-mini"><p class="proj-mini-name">Social Media App</p><p class="proj-mini-desc">College network, real-time database</p><p class="proj-mini-tech">Firebase</p></div>
+        <div class="proj-mini"><p class="proj-mini-name">Campus Placement System</p><p class="proj-mini-d
